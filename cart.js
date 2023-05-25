@@ -34,9 +34,13 @@ const cart = [
 ]
 
 
-const summedPrice = cart.reduce((acc, item) => acc + item.price, 0)
-
-console.log(summedPrice)
+function sumFoodPrices(acc, item) {
+    return acc + item.price;
+  }
+  
+  const summedPrice = cart.reduce(sumFoodPrices, 0);
+  
+  console.log(summedPrice);
 
 //////////////////PROBLEM 2////////////////////
 /*  

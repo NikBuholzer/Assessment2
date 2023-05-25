@@ -69,8 +69,9 @@ console.log(pizza.tags[1])
     Print the value of your new price variable.
 */
 
-delete pizza.price
-pizza.newPrice = 12.99
+pizza.price = 12.99
+// delete pizza.price
+// pizza.newPrice = 12.99
 console.log(pizza)
 /*
     Fourth, and last, destructure the category
@@ -154,7 +155,7 @@ console.log(foodArr)
 
 //CODE HERE
 
-const filteredFood = foodArr.filter(foods => foodArr.name === `rare`)
+const filteredFood = foodArr.filter((foodArr) => foodArr.tags.includes('rare'))
 console.log(filteredFood)
 
 
@@ -197,7 +198,17 @@ console.log(filteredFood)
     Return the filtered array from the entire function
 */
 
-//CODE HERE
+function filterByProperty(property, number, type) {
+    let filteredArray = [];
+  
+    if (type === 'above') {
+      filteredArray = foodArr.filter((food) => food[property] > number);
+    } else if (type === 'below') {
+      filteredArray = foodArr.filter((food) => food[property] < number);
+    }
+  
+    return filteredArray;
+  }
 
 
 /*
@@ -207,4 +218,6 @@ console.log(filteredFood)
     You'll have to console.log to see the filtered array
 */
 
-//CODE HERE
+const filteredFood2 = filterByProperty('price', 15, 'below');
+
+console.log(filteredFood2);
