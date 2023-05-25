@@ -69,10 +69,14 @@ console.log(pizza.tags[1])
     Print the value of your new price variable.
 */
 
-pizza.price = 12.99
-// delete pizza.price
-// pizza.newPrice = 12.99
-console.log(pizza)
+const { price } = pizza;
+console.log(price);
+
+
+// pizza.price = 12.99
+// // delete pizza.price
+// // pizza.newPrice = 12.99
+// console.log(pizza)
 /*
     Fourth, and last, destructure the category
     property.
